@@ -1,0 +1,7 @@
+.header {
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  width: 25rem;
+  display: flex;
+  justify-content: center;
+}
