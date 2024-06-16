@@ -6,6 +6,7 @@ function handleLikeButtonClick(event) {
 }
 
 const likeButton = document.querySelector('[data-js="like-button"]');
+
 likeButton.addEventListener("click", handleLikeButtonClick);
 
 // Exercise:

@@ -12,25 +12,20 @@ function showTosError() {
   tosError.removeAttribute("hidden");
 }
 
-tosCheckbox.addEventListener("click", () => {
-  if (!tosCheckbox.checked) {
-    return showTosError();
-  } else {
-    return hideTosError();
-  }
-});
-
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   // --v-- write your code here --v--
-  if (!tosCheckbox.checked) {
-    return showTosError();
-  } else {
-    return hideTosError();
+  const tosChecked = tosCheckbox.checked;
+
+  if (!tosChecked) {
+    showTosError();
+    return;
   }
-  alert("Form submitted");
+
+  hideTosError();
   // --^-- write your code here --^--
 
   // eslint-disable-next-line no-alert
+  alert("Form submitted");
 });
