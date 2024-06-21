@@ -7,7 +7,7 @@ export default function App() {
 function Greeting({ name, isCoach }) {
   return (
     <div>
-      <h1>Hello {isCoach ? (name = "Coach") : name}!</h1>
+      <h1>Hello {isCoach ? "Coach" : name}!</h1>
     </div>
   );
 }
