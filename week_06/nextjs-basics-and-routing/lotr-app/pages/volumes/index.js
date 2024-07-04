@@ -1,23 +1,21 @@
 import Link from "next/link";
+import { volumes } from "@/lib/data";
+import Head from "next/head";
 
 export default function Volumes() {
   return (
     <>
-      <h2>All Volumes</h2>
+      <Head>
+        <title>LOTR volumes overview</title>
+      </Head>
+      <h2>All LOTR volumes</h2>
+      {/* mapping over the volumes array to dynamcly create the volumes-links: */}
       <ul>
-        <li>
-          <Link href="/volumes/the-fellowship-of-the-ring">
-            Volume 1: The fellowship of the ring
-          </Link>
-        </li>
-        <li>
-          <Link href="/volumes/the-two-towers">Volume 2: The two towers</Link>
-        </li>
-        <li>
-          <Link href="/volumes/the-return-of-the-king">
-            Volume 3: The return of the king
-          </Link>
-        </li>
+        {volumes.map((volume) => (
+          <li key={volume.slug}>
+            <Link href={`/volumes/${volume.slug}`}>{volume.title}</Link>
+          </li>
+        ))}
       </ul>
       <hr></hr>
       <Link href="./">Back to home</Link>
